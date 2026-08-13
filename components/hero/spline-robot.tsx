@@ -1,6 +1,7 @@
-import Spline from '@splinetool/react-spline/next'
+import Spline from "@splinetool/react-spline/next";
 
-const SCENE_URL = 'https://prod.spline.design/fhRFWr5h6pUAtLxO/scene.splinecode'
+const SCENE_URL =
+  "https://prod.spline.design/fhRFWr5h6pUAtLxO/scene.splinecode";
 
 /**
  * Server Component. `@splinetool/react-spline/next` is an async RSC that
@@ -11,7 +12,7 @@ const SCENE_URL = 'https://prod.spline.design/fhRFWr5h6pUAtLxO/scene.splinecode'
 export function SplineRobot() {
   return (
     <div className="spline-robot-canvas relative h-full w-full">
-      <Spline scene={SCENE_URL} style={{ width: '100%', height: '100%' }} />
+      <Spline scene={SCENE_URL} style={{ width: "100%", height: "100%" }} />
     </div>
-  )
+  );
 }
