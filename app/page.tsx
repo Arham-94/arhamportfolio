@@ -25,7 +25,7 @@ function RobotFallback() {
 export default function Page() {
   return (
     <main id="top" className="relative bg-background">
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <Navbar />
       <Hero
         robot={
