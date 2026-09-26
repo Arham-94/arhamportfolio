@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { MagneticButton } from './magnetic-button'
+import { MagneticButton } from "./magnetic-button";
 
 // A single revealable line/block.
 function Reveal({
@@ -10,39 +10,42 @@ function Reveal({
   children,
   className,
 }: {
-  show: boolean
-  delay?: number
-  blur?: boolean
-  children: React.ReactNode
-  className?: string
+  show: boolean;
+  delay?: number;
+  blur?: boolean;
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <div className={className}>
       <div
         style={{
           opacity: show ? 1 : 0,
-          transform: show ? 'translateY(0)' : 'translateY(28px)',
-          filter: blur ? (show ? 'blur(0)' : 'blur(10px)') : undefined,
+          transform: show ? "translateY(0)" : "translateY(28px)",
+          filter: blur ? (show ? "blur(0)" : "blur(10px)") : undefined,
           transition:
-            'opacity 800ms cubic-bezier(0.22,1,0.36,1), transform 800ms cubic-bezier(0.22,1,0.36,1), filter 800ms ease',
+            "opacity 800ms cubic-bezier(0.22,1,0.36,1), transform 800ms cubic-bezier(0.22,1,0.36,1), filter 800ms ease",
           transitionDelay: `${delay}ms`,
         }}
       >
         {children}
       </div>
     </div>
-  )
+  );
 }
 
 export function HeroContent({ stage }: { stage: number }) {
-  const headlineLines = ['I BUILD DIGITAL', 'EXPERIENCES', 'THAT FEEL ALIVE.']
+  const headlineLines = ["I BUILD DIGITAL", "EXPERIENCES", "THAT FEEL ALIVE."];
 
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl text-center md:text-left lg:text-left">
       {/* Eyebrow */}
       <Reveal show={stage >= 3} className="mb-6 lg:mb-8">
         <div className="flex items-center gap-3">
-          <span className="h-px w-8 bg-muted-foreground/60" aria-hidden="true" />
+          <span
+            className="h-px w-8 bg-muted-foreground/60"
+            aria-hidden="true"
+          />
           <span className="font-mono text-[11px] uppercase tracking-[0.4em] text-muted-foreground">
             Full-Stack Web Developer
           </span>
@@ -70,7 +73,7 @@ export function HeroContent({ stage }: { stage: number }) {
 
       {/* CTA group */}
       <Reveal show={stage >= 6} delay={120} className="mt-9 lg:mt-11">
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start lg:justify-start">
           <MagneticButton
             href="#work"
             variant="primary"
@@ -89,5 +92,5 @@ export function HeroContent({ stage }: { stage: number }) {
         </div>
       </Reveal>
     </div>
-  )
+  );
 }

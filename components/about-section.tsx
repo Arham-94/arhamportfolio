@@ -53,9 +53,9 @@ export default function AboutSection() {
         <div className="mb-16 flex items-end justify-between gap-6 border-b border-border/60 pb-5">
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <span className="text-xs font-medium tracking-[0.25em] text-muted-foreground">
+              {/* <span className="text-xs font-medium tracking-[0.25em] text-muted-foreground">
                 01
-              </span>
+              </span> */}
 
               <span className="h-px w-8 bg-border" />
 
@@ -165,6 +165,7 @@ export default function AboutSection() {
         </div>
 
         {/* EDUCATION / EXPERIENCE */}
+
         <div className="mt-28 lg:mt-36">
           {/* TABS HEADER */}
           <div className="flex items-end justify-between border-b border-border">

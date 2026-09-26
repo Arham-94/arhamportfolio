@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import { ArrowUpRight, Check, Copy, Mail, MessageCircle } from "lucide-react";
 
 import { SiGithub, SiInstagram, SiX } from "react-icons/si";
@@ -15,10 +16,15 @@ const contactData = {
 
   whatsapp: "923127501106",
 
+  fiverr: "YOUR_FIVERR_PROFILE_URL",
+
   socialLinks: {
     github: "https://github.com/Arham-94",
+
     linkedin: "https://www.linkedin.com/in/arham-khan-36958a370/",
+
     instagram: "https://www.instagram.com/arhamdeveloper",
+
     x: "https://x.com/ArhamDev94",
   },
 };
@@ -251,6 +257,42 @@ export default function ContactSection() {
             </a>
           </div>
         </div>
+
+        {/* ===================================================
+            FIVERR CTA
+        =================================================== */}
+
+        <a
+          href={contactData.fiverr}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-fiverr-block"
+        >
+          <div className="contact-fiverr-content">
+            <div className="contact-fiverr-top">
+              <span className="contact-fiverr-label">AVAILABLE ON FIVERR</span>
+
+              <ArrowUpRight size={20} />
+            </div>
+
+            <h3>
+              Prefer Fiverr?
+              <br />
+              <span>Hire me there.</span>
+            </h3>
+
+            <p>
+              Browse my services, packages, and reviews on Fiverr and start your
+              project directly through the platform.
+            </p>
+          </div>
+
+          <div className="contact-fiverr-action">
+            <span>View my Fiverr profile</span>
+
+            <ArrowUpRight size={17} />
+          </div>
+        </a>
 
         {/* ===================================================
             SOCIAL LINKS

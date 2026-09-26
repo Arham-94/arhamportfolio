@@ -9,6 +9,8 @@ import ProjectsSection from "@/components/projects-section";
 import CertificatesSection from "@/components/certificates-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer-section";
+import ServicesSection from "@/components/services-section";
+import TestimonialSection from "@/components/testimonial";
 
 function RobotFallback() {
   return (
@@ -35,8 +37,10 @@ export default function Page() {
 
       <AboutSection />
       <SkillsSection />
+      <ServicesSection />
       <ProjectsSection />
       <CertificatesSection />
+      <TestimonialSection />
       <ContactSection />
       <Footer />
     </main>

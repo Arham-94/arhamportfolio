@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ElementType } from "react";
 import { ArrowUpRight, Play, X } from "lucide-react";
 
 import {
@@ -24,6 +24,27 @@ import {
 } from "react-icons/si";
 
 /* =========================================================
+   CATEGORIES
+========================================================= */
+
+export const projectCategories = [
+  {
+    key: "all",
+    label: "All",
+  },
+  {
+    key: "business-website",
+    label: "Business Websites",
+  },
+  {
+    key: "saas",
+    label: "SAAS",
+  },
+] as const;
+
+type ProjectCategory = (typeof projectCategories)[number]["key"];
+
+/* =========================================================
    TYPES
 ========================================================= */
 
@@ -36,6 +57,7 @@ export interface Project {
   link: string;
   video: string;
   skills: string;
+  category: Exclude<ProjectCategory, "all">;
 }
 
 /* =========================================================
@@ -49,27 +71,28 @@ export const projects: Project[] = [
       "HotChillz is a modern food e-commerce website built for a bold Pakistani fast-food brand. It features a sleek dark UI, responsive design, interactive menu, cart system, and streamlined ordering experience focused on delivering a premium and engaging user experience.",
     cover: "/projectsImages/hotchillz.png",
 
-    // Add mobile screenshot later:
     mobilePicture: "/mobile/hotchillz.png",
 
     github: "",
     link: "https://hotchillz.vercel.app/",
     video: "",
     skills: "html5,css3,javascript,reactjs,nextjs,supabase,postgresql",
+    category: "business-website",
   },
+
   {
     name: "CV Insight",
     description:
       "A powerful bulk resume analyzer that helps recruiters process hundreds of CVs simultaneously, identify top candidates, and eliminate repetitive manual screening.",
     cover: "/projectsImages/cvinsight.png",
 
-    // Add mobile screenshot later:
     mobilePicture: "/mobile/cvinsight.png",
 
     github: "",
     link: "",
     video: "https://www.youtube.com/watch?v=hRRyyFY3FWY",
     skills: "html5,css3,javascript,reactjs,python,django",
+    category: "saas",
   },
 
   {
@@ -84,6 +107,7 @@ export const projects: Project[] = [
     link: "",
     video: "https://youtu.be/c9m_daQzlyE",
     skills: "html5,css3,javascript,reactjs,nextjs,python,fastapi,opencv",
+    category: "saas",
   },
 
   {
@@ -98,6 +122,7 @@ export const projects: Project[] = [
     link: "",
     video: "https://youtu.be/twdt1LVZ_Qk",
     skills: "html5,css3,javascript,reactjs,nextjs,python,fastapi",
+    category: "saas",
   },
 
   {
@@ -112,6 +137,7 @@ export const projects: Project[] = [
     link: "",
     video: "https://youtu.be/z6aOQeDsoAQ",
     skills: "html5,css3,javascript,reactjs,python,django",
+    category: "saas",
   },
 
   {
@@ -126,6 +152,7 @@ export const projects: Project[] = [
     link: "",
     video: "https://youtu.be/Ukf3Rsk5s4w",
     skills: "html5,css3,javascript,reactjs,python,django",
+    category: "saas",
   },
 ];
 
@@ -136,7 +163,7 @@ export const projects: Project[] = [
 const skillIcons: Record<
   string,
   {
-    icon: React.ElementType;
+    icon: ElementType;
     color: string;
   }
 > = {
@@ -324,6 +351,7 @@ function ProjectMedia({
     If mobilePicture exists → use it.
     Otherwise → use the desktop cover.
   */
+
   const mobileImage = project.mobilePicture || project.cover;
 
   const hasVideo = Boolean(project.video?.trim());
@@ -391,10 +419,11 @@ function ProjectMedia({
           <span className="project-mobile-speaker" />
         </div>
 
-        {/* 
+        {/*
           Uses mobilePicture if available.
           Falls back to cover if mobilePicture is undefined.
         */}
+
         <div className="project-mobile-screen">
           <img
             src={mobileImage}
@@ -454,6 +483,17 @@ function VideoModal({
 export default function ProjectsSection() {
   const [activeVideo, setActiveVideo] = useState<Project | null>(null);
 
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("all");
+
+  /* =========================================================
+     FILTER PROJECTS
+  ========================================================= */
+
+  const filteredProjects =
+    activeCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
+
   return (
     <section id="projects" className="projects-section">
       {/* =====================================================
@@ -478,11 +518,30 @@ export default function ProjectsSection() {
       </div>
 
       {/* =====================================================
+          CATEGORY TABS
+      ===================================================== */}
+
+      <div className="project-category-tabs mx-auto flex max-w-6xl items-center rounded-4xl border border-[oklch(1_0_0_/_0.1)] bg-[oklch(0.2_0.004_260_/_0.55)] px-4 py-3 shadow-[0_8px_40px_-12px_oklch(0_0_0_/_0.6)] backdrop-blur-xl sm:px-6">
+        {projectCategories.map((category) => (
+          <button
+            key={category.key}
+            type="button"
+            className={`project-category-tab ${
+              activeCategory === category.key ? "active" : ""
+            }`}
+            onClick={() => setActiveCategory(category.key)}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+
+      {/* =====================================================
           PROJECT LIST
       ===================================================== */}
 
       <div className="projects-list">
-        {projects.map((project, index) => {
+        {filteredProjects.map((project, index) => {
           const skills = project.skills
             .split(",")
             .map(

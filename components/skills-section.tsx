@@ -388,9 +388,9 @@ export default function SkillsSection() {
 
         <div className="mb-12">
           <div className="mb-5 flex items-center gap-3">
-            <span className="text-xs font-medium tracking-[0.25em] text-muted-foreground">
+            {/* <span className="text-xs font-medium tracking-[0.25em] text-muted-foreground">
               02
-            </span>
+            </span> */}
 
             <span className="h-px w-8 bg-border" />
 
