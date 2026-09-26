@@ -48,6 +48,7 @@ const siteKeywords = [
   "modern web development",
   "responsive web design",
   "UI UX developer",
+  "landing page development",
 ];
 
 /* =========================================================
