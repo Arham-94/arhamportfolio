@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
    SITE CONFIG
 ========================================================= */
 
-const siteUrl = "https://arhamdeveloper.vercel.app";
+const siteUrl = "https://arhamdev.vercel.app";
 
 const siteName = "Arham Khan";
 const siteTitle = "Arham Khan — Full-Stack Web Developer";
@@ -123,7 +123,7 @@ export const metadata: Metadata = {
 
     images: ["/opengraph-image.png"],
 
-    creator: "@arhamkhan",
+    creator: "@ArhamDev94",
   },
 
   icons: {
