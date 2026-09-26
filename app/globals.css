@@ -4363,7 +4363,7 @@
 
 @media (max-width: 900px) {
   .services-section {
-    padding: 100px 0;
+    padding: 100px 20px;
   }
 
   .services-header {
@@ -4387,7 +4387,7 @@
 
 @media (max-width: 600px) {
   .services-section {
-    padding: 80px 0;
+    padding: 80px 20px;
   }
 
   .services-header {
@@ -4877,7 +4877,7 @@
 
   gap: 50px;
 
-  margin-top: 18px;
+  margin-bottom: 18px;
   padding: 42px;
 
   background: #1dbf73;

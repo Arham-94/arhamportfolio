@@ -134,6 +134,42 @@ export default function ContactSection() {
         </div>
 
         {/* ===================================================
+            FIVERR CTA
+        =================================================== */}
+
+        <a
+          href={contactData.fiverr}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-fiverr-block"
+        >
+          <div className="contact-fiverr-content">
+            <div className="contact-fiverr-top">
+              <span className="contact-fiverr-label">AVAILABLE ON FIVERR</span>
+
+              <ArrowUpRight size={20} />
+            </div>
+
+            <h3>
+              Prefer Fiverr?
+              <br />
+              <span>Hire me there.</span>
+            </h3>
+
+            <p>
+              Browse my services, packages, and reviews on Fiverr and start your
+              project directly through the platform.
+            </p>
+          </div>
+
+          <div className="contact-fiverr-action">
+            <span>View my Fiverr profile</span>
+
+            <ArrowUpRight size={17} />
+          </div>
+        </a>
+
+        {/* ===================================================
             CONTACT GRID
         =================================================== */}
 
@@ -257,42 +293,6 @@ export default function ContactSection() {
             </a>
           </div>
         </div>
-
-        {/* ===================================================
-            FIVERR CTA
-        =================================================== */}
-
-        <a
-          href={contactData.fiverr}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-fiverr-block"
-        >
-          <div className="contact-fiverr-content">
-            <div className="contact-fiverr-top">
-              <span className="contact-fiverr-label">AVAILABLE ON FIVERR</span>
-
-              <ArrowUpRight size={20} />
-            </div>
-
-            <h3>
-              Prefer Fiverr?
-              <br />
-              <span>Hire me there.</span>
-            </h3>
-
-            <p>
-              Browse my services, packages, and reviews on Fiverr and start your
-              project directly through the platform.
-            </p>
-          </div>
-
-          <div className="contact-fiverr-action">
-            <span>View my Fiverr profile</span>
-
-            <ArrowUpRight size={17} />
-          </div>
-        </a>
 
         {/* ===================================================
             SOCIAL LINKS

@@ -75,7 +75,7 @@ export function HeroContent({ stage }: { stage: number }) {
       <Reveal show={stage >= 6} delay={120} className="mt-9 lg:mt-11">
         <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start lg:justify-start">
           <MagneticButton
-            href="#work"
+            href="#projects"
             variant="primary"
             ariaLabel="Explore my work"
           >

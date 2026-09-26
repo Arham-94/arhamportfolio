@@ -36,9 +36,9 @@ export default function Page() {
       />
 
       <AboutSection />
-      <SkillsSection />
       <ServicesSection />
       <ProjectsSection />
+      <SkillsSection />
       <CertificatesSection />
       <TestimonialSection />
       <ContactSection />
